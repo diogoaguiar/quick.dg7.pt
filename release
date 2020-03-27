@@ -28,10 +28,10 @@ cp package.json $dir
 cp README.md $dir
 cp webpack.mix.js $dir
 
-docker build -t quick.dg7.pt .
+docker build -t quicky.dg7.pt .
 
-docker tag quick.dg7.pt eu.gcr.io/quicky-272322/quick.dg7.pt:latest
-docker tag quick.dg7.pt eu.gcr.io/quicky-272322/quick.dg7.pt:$version
+docker tag quicky.dg7.pt eu.gcr.io/quicky-272322/quicky.dg7.pt:latest
+docker tag quicky.dg7.pt eu.gcr.io/quicky-272322/quicky.dg7.pt:$version
 
-docker push eu.gcr.io/quicky-272322/quick.dg7.pt:latest
-docker push eu.gcr.io/quicky-272322/quick.dg7.pt:$version
+docker push eu.gcr.io/quicky-272322/quicky.dg7.pt:latest
+docker push eu.gcr.io/quicky-272322/quicky.dg7.pt:$version
