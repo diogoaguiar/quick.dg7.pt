@@ -2,25 +2,32 @@
     <div>
         <section class="hero is-dark is-fullheight">
             <div class="hero-head">
-                <header class="navbar">
+                <nav class="navbar">
                     <div class="container">
-                        <div class="navbar-start">
+                        <div class="navbar-brand">
                             <div class="navbar-item">
                                 <h1 class="title is-1">qk</h1>
                             </div>
+                            <span class="navbar-burger burger" data-target="menu" @click="menuIsActive=!menuIsActive">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
                         </div>
-                        <div class="navbar-end">
+                        <div id="menu" class="navbar-menu" :class="menuIsActive ? 'is-active' : ''">
+                            <div class="navbar-end">
                             <span class="navbar-item">
-                                <button class="button is-danger is-inverted" @click="donate()">
+                                <button class="button is-dark" @click="donate()">
                                     <span class="icon">
                                         <i class="mdi mdi-heart"></i>
                                     </span>
                                     <span>donate</span>
                                 </button>
                             </span>
+                            </div>
                         </div>
                     </div>
-                </header>
+                </nav>
             </div>
 
             <div class="hero-body">
@@ -87,7 +94,8 @@ export default {
             url: "",
             shortened: false,
             shortening: false,
-            shortenedUrl: ""
+            shortenedUrl: "",
+            menuIsActive: false
         };
     },
     methods: {

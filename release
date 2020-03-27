@@ -16,6 +16,7 @@ mkdir -p $dir
 
 cp -r bin $dir
 mkdir $dir/configs && cp configs/gcloud.json.prod $dir/configs/gcloud.json
+cp configs/app.json $dir/configs/app.json
 mkdir $dir/public
 cp -r resources $dir
 cp -r routes $dir
@@ -27,6 +28,11 @@ cp package-lock.json $dir
 cp package.json $dir
 cp README.md $dir
 cp webpack.mix.js $dir
+
+cd $dir
+
+npm install --no-dev
+npm run production
 
 docker build -t quicky.dg7.pt .
 
