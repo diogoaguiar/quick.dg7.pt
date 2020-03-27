@@ -1,0 +1,55 @@
+@import '~bulma/sass/utilities/_all';
+@import '~@mdi/font/scss/materialdesignicons';
+
+// Set your colors
+$primary: #0389be;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "link": ($link, $link-invert)
+);
+
+@import '~bulma/bulma';
+
+//@import '~buefy/src/scss/buefy.scss';
+@import "~buefy/src/scss/utils/_all";
+//@import "~buefy/src/scss/components/_autocomplete";
+//@import "~buefy/src/scss/components/_carousel";
+//@import "~buefy/src/scss/components/_checkbox";
+//@import "~buefy/src/scss/components/_clockpicker";
+//@import "~buefy/src/scss/components/_collapse";
+//@import "~buefy/src/scss/components/_datepicker";
+//@import "~buefy/src/scss/components/_dialog";
+//@import "~buefy/src/scss/components/_dropdown";
+//@import "~buefy/src/scss/components/_form";
+//@import "~buefy/src/scss/components/_icon";
+//@import "~buefy/src/scss/components/_loading";
+//@import "~buefy/src/scss/components/_menu";
+//@import "~buefy/src/scss/components/_message";
+//@import "~buefy/src/scss/components/_modal";
+@import "~buefy/src/scss/components/_notices";
+//@import "~buefy/src/scss/components/_numberinput";
+//@import "~buefy/src/scss/components/_pagination";
+//@import "~buefy/src/scss/components/_progress";
+//@import "~buefy/src/scss/components/_radio";
+//@import "~buefy/src/scss/components/_rate";
+//@import "~buefy/src/scss/components/_select";
+//@import "~buefy/src/scss/components/_slider";
+//@import "~buefy/src/scss/components/_steps";
+//@import "~buefy/src/scss/components/_switch";
+//@import "~buefy/src/scss/components/_table";
+//@import "~buefy/src/scss/components/_tabs";
+//@import "~buefy/src/scss/components/_tag";
+//@import "~buefy/src/scss/components/_taginput";
+//@import "~buefy/src/scss/components/_timepicker";
+//@import "~buefy/src/scss/components/_tooltip";
+//@import "~buefy/src/scss/components/_upload";

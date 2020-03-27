@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+    app:
+        build:
+            context: .
+        volumes:
+            - '/home/xoca/Source/quicky.dg7.pt:/var/www/html'
+        ports:
+            - '8081:80'
+        environment:
+            - 'ENVIRONMENT=dev'
+        entrypoint:
+            - 'node_modules/.bin/nodemon'
+            - '-L'

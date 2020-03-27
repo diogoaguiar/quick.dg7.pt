@@ -1,0 +1,37 @@
+#!/bin/sh
+version=$1
+dir=releases/v$version
+
+if [ -z "$version" ]; then
+    echo "Invalid version";
+    exit;
+fi
+
+if [ -d "$dir" ]; then
+    echo "There is already a '$dir' folder";
+    exit;
+fi
+
+mkdir -p $dir
+
+cp -r bin $dir
+mkdir $dir/configs && cp configs/gcloud.json.prod $dir/configs/gcloud.json
+mkdir $dir/public
+cp -r resources $dir
+cp -r routes $dir
+cp .dockerignore $dir
+cp .gitignore $dir
+cp app.js $dir
+cp Dockerfile $dir
+cp package-lock.json $dir
+cp package.json $dir
+cp README.md $dir
+cp webpack.mix.js $dir
+
+docker build -t quick.dg7.pt .
+
+docker tag quick.dg7.pt eu.gcr.io/quicky-272322/quick.dg7.pt:latest
+docker tag quick.dg7.pt eu.gcr.io/quicky-272322/quick.dg7.pt:$version
+
+docker push eu.gcr.io/quicky-272322/quick.dg7.pt:latest
+docker push eu.gcr.io/quicky-272322/quick.dg7.pt:$version
