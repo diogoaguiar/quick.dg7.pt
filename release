@@ -18,6 +18,7 @@ cp -r bin $dir
 mkdir $dir/configs && cp configs/gcloud.json.prod $dir/configs/gcloud.json
 cp configs/app.json $dir/configs/app.json
 mkdir $dir/public
+cp -r middleware $dir
 cp -r resources $dir
 cp -r routes $dir
 cp .dockerignore $dir
