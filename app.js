@@ -7,7 +7,6 @@ const logger = require('morgan');
 
 const webRouter = require('./routes/index');
 const apiRouter = require('./routes/api');
-const rate = require('./middleware/rate');
 
 const app = express();
 
@@ -16,8 +15,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/api/', rate);
 
 app.use('/', webRouter);
 app.use('/api/', apiRouter);
