@@ -6,7 +6,7 @@
                     <div class="container">
                         <div class="navbar-brand">
                             <div class="navbar-item">
-                                <h1 class="title is-1">qk</h1>
+                                <h1 class="title is-2">quicky</h1>
                             </div>
                             <span class="navbar-burger burger" data-target="menu" @click="menuIsActive=!menuIsActive">
                                 <span></span>
@@ -45,6 +45,8 @@
                                         placeholder="shorten your url"
                                         @keyup="urlInputTrigger()"
                                         @keyup.enter="shorten(url)"
+                                        autocapitalize="none"
+                                        autocorrect="off" 
                                     />
                                 </div>
                                 <div v-if="!shortened" class="field">
@@ -132,9 +134,9 @@ export default {
             let response;
             try {
                 response = await axios.post("/api/shorten", { url });
-            } catch (error) {
-                console.log(error.response);
-                this.alert(error.response);
+            } catch ({ response }) {
+                console.log(response);
+                this.alert(response.data);
             }
 
             let data = response.data;
